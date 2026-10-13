@@ -1,3 +1,4 @@
+//seq+parallel
 pipeline
 {
     agent any
