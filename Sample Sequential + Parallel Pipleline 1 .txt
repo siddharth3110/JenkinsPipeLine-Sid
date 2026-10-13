@@ -1,0 +1,36 @@
+pipeline
+    {
+        agent any
+        stages
+        {
+            stage ('parallel')
+            {
+                parallel
+                {
+                    stage ('1')
+                    {
+                        steps {sh 'echo "This is 1st paralle stag"'}
+                    }
+                    
+                     stage ('2')
+                    {
+                        steps {sh 'echo "This is 2nd paralle stag"'}
+                    }
+                    
+                     stage ('3')
+                    {
+                        steps {sh 'echo "This is 3rd paralle stag"'}
+                    }
+                }
+            }
+            stage ('seq1')
+                {
+                    steps {sh 'echo "This is first seq"'}
+                }
+                
+            stage ('seq2')
+                {
+                    steps {sh 'echo "This is second seq"'}
+                }
+        }
+    }
